@@ -1,0 +1,21 @@
+FROM solarbotics/arduino-cli:0.18.3-python3
+WORKDIR /app
+COPY . .
+RUN cd program
+RUN arduino-cli config init --overwrite
+RUN arduino-cli core update-index --additional-urls http://arduino.esp8266.com/stable/package_esp8266com_index.json
+# --additional-urls http://arduino.esp8266.com/stable/package_esp8266com_index.json
+RUN arduino-cli core install esp8266:esp8266 --additional-urls http://arduino.esp8266.com/stable/package_esp8266com_index.json
+RUN arduino-cli board listall | grep -i 'nodemcu'
+# pip install -U platformio
+#RUN arduino-cli compile --fqbn esp8266:esp8266:nodemcu program
+
+
+#/home/circleci/Arduino/
+
+# RUN arduino-cli lib install WiFiManager
+#CMD ["node", "src/index.js"]
+
+#solarbotics/arduino-cli:0.18.3-python3
+
+
