@@ -3,8 +3,8 @@
 
 import time
 import sys
-from infra.mqtt import Mqtt
-from infra.wifi import Wifi
+from mqtt import Mqtt
+from wifi import Wifi
 
 WIFI_SSID = "VIVOFIBRA-6CA1"
 WIFI_PW = "Pedro2203"
